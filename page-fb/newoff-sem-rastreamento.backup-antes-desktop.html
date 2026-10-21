@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LandPage</title>
+<style>
+        .esconder {
+            display: none !important;
+        }
+    </style>
+<style id="css-consolidado">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #1c1e21;
+    max-width: 414px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Status Bar */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid #e4e6ea;
+}
+
+.status-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.status-right i {
+    font-size: 12px;
+    color: #1c1e21;
+}
+
+.battery {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.battery span {
+    font-size: 12px;
+}
+
+/* Main Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e4e6ea;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1877f2;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.header-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.header-btn:hover {
+    background-color: #e4e6ea;
+}
+
+.header-btn i {
+    font-size: 18px;
+    color: #1c1e21;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e4e6ea;
+    position: relative;
+}
+
+.tab {
+    flex: 1;
+    padding: 16px 8px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    color: #65676b;
+    transition: color 0.2s;
+}
+
+.tab.active {
+    color: #1877f2;
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #1877f2;
+    border-radius: 2px;
+}
+
+.tab:hover {
+    color: #1877f2;
+}
+
+.filter-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background-color 0.2s;
+}
+
+.filter-btn:hover {
+    background-color: #e4e6ea;
+}
+
+.filter-btn i {
+    font-size: 16px;
+    color: #1c1e21;
+}
+
+/* Post Creation Area */
+.post-creation {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e4e6ea;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.profile-pic i {
+    font-size: 20px;
+    color: #65676b;
+}
+
+.post-input {
+    flex: 1;
+    padding: 12px 16px;
+    background-color: #f0f2f5;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.post-input:hover {
+    background-color: #e4e6ea;
+}
+
+.post-input span {
+    color: #65676b;
+    font-size: 15px;
+}
+
+/* Post Container */
+.post-container {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e4e6ea;
+    margin-bottom: 8px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+}
+
+.post-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #1c1e21;
+}
+
+.verified-badge {
+    width: 16px;
+    height: 16px;
+    background-color: #1877f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verified-badge i {
+    font-size: 9px;
+    color: #ffffff;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-author {
+    font-weight: 600;
+    font-size: 15px;
+    color: #1c1e21;
+}
+
+.post-time {
+    font-size: 13px;
+    color: #65676b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-time i {
+    font-size: 12px;
+    color: #65676b;
+}
+
+.post-menu-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.post-menu-btn:hover {
+    background-color: #f0f2f5;
+}
+
+.post-menu-btn i {
+    font-size: 16px;
+    color: #65676b;
+}
+
+.post-content {
+    padding: 0 16px 12px 16px;
+}
+
+.post-text {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #1c1e21;
+    margin: 0;
+}
+
+/* Video Container */
+.video-container {
+    width: 100%;
+    background-color: #000000;
+    position: relative;
+    cursor: pointer;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    gap: 12px;
+    transition: opacity 0.2s;
+}
+
+.video-placeholder:hover {
+    opacity: 0.9;
+}
+
+.video-placeholder i {
+    font-size: 48px;
+    color: #ffffff;
+}
+
+.video-placeholder span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Engagement Bar */
+.engagement-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e4e6ea;
+    font-size: 14px;
+    color: #65676b;
+}
+
+.reactions-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.reaction-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.reaction-count {
+    margin-left: 6px;
+    font-weight: 600;
+}
+
+.engagement-stats {
+    display: flex;
+    gap: 16px;
+}
+
+.stat-item {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.stat-item:hover {
+    text-decoration: underline;
+}
+
+/* Post Actions */
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 16px;
+    border-top: 1px solid #e4e6ea;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 600;
+    font-size: 15px;
+    color: #65676b;
+}
+
+.action-btn:hover {
+    background-color: #f0f2f5;
+}
+
+.action-btn i {
+    font-size: 18px;
+}
+
+/* Post Cards (Offer Cards) */
+.dtc-offer-card {
+    background-color: #ffffff;
+    padding: 16px;
+    border-bottom: 8px solid #f0f2f5;
+    margin-bottom: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+    border-top: 1px solid #e4e6ea;
+}
+
+.best-value-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1a5f1a;
+    color: white;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.single-product-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #6c757d;
+    color: white;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+.supply-info {
+    margin-bottom: 20px;
+}
+
+.supply-title {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+.product-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 16px;
+}
+
+.product-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.price-benefits-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.price-container {
+    text-align: left;
+}
+
+.price-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.price-amount {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+}
+
+.price-unit {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.savings {
+    font-size: 18px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.benefit-item {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #28a745;
+}
+
+.add-to-cart-btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
+    animation: pulse 2s infinite;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+    transform: scale(1.02);
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.payment-icon {
+    font-size: 24px;
+    opacity: 0.7;
+}
+
+.total-price {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    bottom: -100px;
+    right: 16px;
+    background-color: #79d25d;
+    color: white;
+    padding: 12px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 280px;
+    text-align: center;
+    z-index: 1000;
+    transition: bottom 0.5s ease-in-out;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.notification .bold {
+    font-weight: bold;
+}
+
+/* Comments Section */
+.comments-section {
+    border-top: 1px solid #e4e6ea;
+    background-color: #ffffff;
+}
+
+.comments-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.comments-count {
+    font-size: 15px;
+    font-weight: 600;
+    color: #65676b;
+    cursor: pointer;
+}
+
+.comments-count:hover {
+    text-decoration: underline;
+}
+
+.comments-list {
+    padding: 0 16px;
+}
+
+.comment {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment-profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.comment-profile-pic i {
+    font-size: 14px;
+    color: #65676b;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.comment-author {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1c1e21;
+}
+
+.comment-time {
+    font-size: 12px;
+    color: #65676b;
+}
+
+.comment-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #1c1e21;
+    margin: 0 0 8px 0;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.comment-action {
+    font-size: 12px;
+    font-weight: 600;
+    color: #65676b;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.comment-action:hover {
+    color: #1877f2;
+}
+
+.reply-comment {
+    margin-left: 20px;
+    border-left: 2px solid #e4e6ea;
+    padding-left: 12px;
+}
+
+.comment-reactions {
+    font-size: 12px;
+    color: #65676b;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+/* Add Comment */
+.add-comment {
+    padding: 12px 16px;
+    border-top: 1px solid #f0f2f5;
+}
+
+.comment-input-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.comment-input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #f0f2f5;
+    border-radius: 20px;
+    padding: 8px 12px;
+    gap: 8px;
+}
+
+.comment-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #1c1e21;
+    outline: none;
+    padding: 0;
+}
+
+.comment-input::placeholder {
+    color: #65676b;
+}
+
+.comment-send-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background-color: #1877f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.comment-send-btn:hover {
+    background-color: #166fe5;
+}
+
+.comment-send-btn img {
+    width: 12px;
+    height: 12px;
+    filter: brightness(0) invert(1);
+}
+
+/* Loading States */
+.comment-input-wrapper.loading {
+    background-color: #e4e6ea;
+    pointer-events: none;
+}
+
+.comment-send-btn.loading {
+    background-color: #65676b;
+    pointer-events: none;
+}
+
+.comment-send-btn.loading img {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.comment-input.loading {
+    color: #65676b;
+}
+
+/* New Comment Animation */
+.new-comment {
+    animation: slideIn 0.3s ease-out;
+    background-color: #f8f9fa;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bottom Action Bar */
+.bottom-actions {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 414px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border-top: 1px solid #e4e6ea;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.action-item:hover {
+    background-color: #f0f2f5;
+}
+
+.action-item i {
+    font-size: 20px;
+    color: #1877f2;
+}
+
+.action-item span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #65676b;
+}
+
+.action-divider {
+    width: 1px;
+    height: 40px;
+    background-color: #e4e6ea;
+}
+
+/* Responsive adjustments */
+@media (max-width: 414px) {
+    body {
+        max-width: 100%;
+    }
+    
+    .bottom-actions {
+        max-width: 100%;
+    }
+} 
+.fas, .far {
+    font-style: normal;
+    display: inline-block;
+    width: 1.18em;
+    height: 1.18em;
+    min-width: 1.18em;
+    background-color: currentColor;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    vertical-align: -0.16em;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.fas::before, .far::before { content: ""; }
+.fa-search { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 fill-rule=%22evenodd%22 d=%22M10.75 3.5a7.25 7.25 0 1 0 0 14.5 7.25 7.25 0 0 0 0-14.5Zm-5.25 7.25a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Z%22/%3E%3Cpath fill=%22black%22 d=%22M15.62 16.96a1 1 0 0 1 1.42-1.41l3.17 3.17a1 1 0 0 1-1.42 1.42l-3.17-3.18Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 fill-rule=%22evenodd%22 d=%22M10.75 3.5a7.25 7.25 0 1 0 0 14.5 7.25 7.25 0 0 0 0-14.5Zm-5.25 7.25a5.25 5.25 0 1 1 10.5 0 5.25 5.25 0 0 1-10.5 0Z%22/%3E%3Cpath fill=%22black%22 d=%22M15.62 16.96a1 1 0 0 1 1.42-1.41l3.17 3.17a1 1 0 0 1-1.42 1.42l-3.17-3.18Z%22/%3E%3C/svg%3E'); }
+.fa-comment-dots { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M12 2C6.37 2 2 6.16 2 11.78c0 3 1.25 5.55 3.28 7.22v2.9c0 .45.5.72.88.48l2.62-1.56c1 .28 2.08.43 3.22.43 5.63 0 10-4.16 10-9.78S17.63 2 12 2Zm1.04 13.2-2.57-2.74-5.02 2.74 5.55-5.9 2.63 2.74 4.92-2.74-5.51 5.9Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M12 2C6.37 2 2 6.16 2 11.78c0 3 1.25 5.55 3.28 7.22v2.9c0 .45.5.72.88.48l2.62-1.56c1 .28 2.08.43 3.22.43 5.63 0 10-4.16 10-9.78S17.63 2 12 2Zm1.04 13.2-2.57-2.74-5.02 2.74 5.55-5.9 2.63 2.74 4.92-2.74-5.51 5.9Z%22/%3E%3C/svg%3E'); }
+.fa-sliders-h { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M4 7a1 1 0 0 1 1-1h4.13a3 3 0 0 1 5.74 0H19a1 1 0 1 1 0 2h-4.13a3 3 0 0 1-5.74 0H5a1 1 0 0 1-1-1Zm7.5-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM4 17a1 1 0 0 1 1-1h4.13a3 3 0 0 1 5.74 0H19a1 1 0 1 1 0 2h-4.13a3 3 0 0 1-5.74 0H5a1 1 0 0 1-1-1Zm7.5-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M4 7a1 1 0 0 1 1-1h4.13a3 3 0 0 1 5.74 0H19a1 1 0 1 1 0 2h-4.13a3 3 0 0 1-5.74 0H5a1 1 0 0 1-1-1Zm7.5-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2ZM4 17a1 1 0 0 1 1-1h4.13a3 3 0 0 1 5.74 0H19a1 1 0 1 1 0 2h-4.13a3 3 0 0 1-5.74 0H5a1 1 0 0 1-1-1Zm7.5-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z%22/%3E%3C/svg%3E'); }
+.fa-check { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M9.2 16.6 4.95 12.35a1.25 1.25 0 1 1 1.77-1.77l2.48 2.48 7.92-7.91a1.25 1.25 0 0 1 1.76 1.77L9.2 16.6Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M9.2 16.6 4.95 12.35a1.25 1.25 0 1 1 1.77-1.77l2.48 2.48 7.92-7.91a1.25 1.25 0 0 1 1.76 1.77L9.2 16.6Z%22/%3E%3C/svg%3E'); }
+.fa-globe { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 fill-rule=%22evenodd%22 d=%22M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 2c.82 0 1.73 1.26 2.19 3H9.81C10.27 6.26 11.18 5 12 5ZM7.76 8A7.03 7.03 0 0 1 9 6.3C8.78 6.82 8.6 7.39 8.45 8h-.69Zm-.66 2h1.02a17.34 17.34 0 0 0 0 4H7.1a7.06 7.06 0 0 1 0-4Zm.66 6h.69c.15.61.33 1.18.55 1.7A7.03 7.03 0 0 1 7.76 16ZM12 19c-.82 0-1.73-1.26-2.19-3h4.38C13.73 17.74 12.82 19 12 19Zm2.66-5H9.34a15.06 15.06 0 0 1 0-4h5.32a15.06 15.06 0 0 1 0 4Zm.34 3.7c.22-.52.4-1.09.55-1.7h.69A7.03 7.03 0 0 1 15 17.7ZM16.9 14h-1.02a17.34 17.34 0 0 0 0-4h1.02a7.06 7.06 0 0 1 0 4ZM15.55 8A10.96 10.96 0 0 0 15 6.3 7.03 7.03 0 0 1 16.24 8h-.69Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 fill-rule=%22evenodd%22 d=%22M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 2c.82 0 1.73 1.26 2.19 3H9.81C10.27 6.26 11.18 5 12 5ZM7.76 8A7.03 7.03 0 0 1 9 6.3C8.78 6.82 8.6 7.39 8.45 8h-.69Zm-.66 2h1.02a17.34 17.34 0 0 0 0 4H7.1a7.06 7.06 0 0 1 0-4Zm.66 6h.69c.15.61.33 1.18.55 1.7A7.03 7.03 0 0 1 7.76 16ZM12 19c-.82 0-1.73-1.26-2.19-3h4.38C13.73 17.74 12.82 19 12 19Zm2.66-5H9.34a15.06 15.06 0 0 1 0-4h5.32a15.06 15.06 0 0 1 0 4Zm.34 3.7c.22-.52.4-1.09.55-1.7h.69A7.03 7.03 0 0 1 15 17.7ZM16.9 14h-1.02a17.34 17.34 0 0 0 0-4h1.02a7.06 7.06 0 0 1 0 4ZM15.55 8A10.96 10.96 0 0 0 15 6.3 7.03 7.03 0 0 1 16.24 8h-.69Z%22/%3E%3C/svg%3E'); }
+.fa-ellipsis-h { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M5 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm5 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm5 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M5 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm5 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm5 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Z%22/%3E%3C/svg%3E'); }
+.far.fa-thumbs-up { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M8.5 20.5H5.75A2.25 2.25 0 0 1 3.5 18.25v-6a2.25 2.25 0 0 1 2.25-2.25H8.5v10.5Z%22 fill=%22none%22 stroke=%22black%22 stroke-width=%222%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M8.5 10.5 11.38 4c.36-.82 1.36-1.15 2.14-.71 1.23.69 1.77 2.16 1.28 3.48L13.6 10h4.8c1.4 0 2.45 1.29 2.17 2.66l-1.06 5.2a3.25 3.25 0 0 1-3.18 2.64H8.5v-10Z%22 fill=%22none%22 stroke=%22black%22 stroke-width=%222%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M8.5 20.5H5.75A2.25 2.25 0 0 1 3.5 18.25v-6a2.25 2.25 0 0 1 2.25-2.25H8.5v10.5Z%22 fill=%22none%22 stroke=%22black%22 stroke-width=%222%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M8.5 10.5 11.38 4c.36-.82 1.36-1.15 2.14-.71 1.23.69 1.77 2.16 1.28 3.48L13.6 10h4.8c1.4 0 2.45 1.29 2.17 2.66l-1.06 5.2a3.25 3.25 0 0 1-3.18 2.64H8.5v-10Z%22 fill=%22none%22 stroke=%22black%22 stroke-width=%222%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22/%3E%3C/svg%3E'); }
+.fas.fa-thumbs-up { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M8.25 21H5.5A2.5 2.5 0 0 1 3 18.5v-6A2.5 2.5 0 0 1 5.5 10h2.75v11Zm2 0V10.54L13.1 4.1c.28-.64 1.04-.91 1.66-.58 1.5.8 2.2 2.58 1.61 4.18L15.51 10h3.02A2.47 2.47 0 0 1 21 12.97l-1.05 5.16A3.55 3.55 0 0 1 16.48 21h-6.23Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M8.25 21H5.5A2.5 2.5 0 0 1 3 18.5v-6A2.5 2.5 0 0 1 5.5 10h2.75v11Zm2 0V10.54L13.1 4.1c.28-.64 1.04-.91 1.66-.58 1.5.8 2.2 2.58 1.61 4.18L15.51 10h3.02A2.47 2.47 0 0 1 21 12.97l-1.05 5.16A3.55 3.55 0 0 1 16.48 21h-6.23Z%22/%3E%3C/svg%3E'); }
+.fa-comment { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M12 4C7.03 4 3 7.58 3 12c0 2.12.93 4.05 2.45 5.49L5 20.7a.75.75 0 0 0 1.08.76l3.13-1.8c.88.22 1.82.34 2.79.34 4.97 0 9-3.58 9-8s-4.03-8-9-8Z%22 fill=%22none%22 stroke=%22black%22 stroke-width=%222%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath d=%22M12 4C7.03 4 3 7.58 3 12c0 2.12.93 4.05 2.45 5.49L5 20.7a.75.75 0 0 0 1.08.76l3.13-1.8c.88.22 1.82.34 2.79.34 4.97 0 9-3.58 9-8s-4.03-8-9-8Z%22 fill=%22none%22 stroke=%22black%22 stroke-width=%222%22 stroke-linejoin=%22round%22 stroke-linecap=%22round%22/%3E%3C/svg%3E'); }
+.fa-share { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M14 5.1c0-.89 1.08-1.33 1.7-.7l6 6a1 1 0 0 1 0 1.4l-6 6c-.62.63-1.7.19-1.7-.7V14h-1.2c-3.54 0-6.55 1.15-8.9 3.6-.7.73-1.92.04-1.64-.94C3.55 12.1 7.4 9.9 12.8 9.9H14V5.1Zm2 2.42v3.38a1 1 0 0 1-1 1h-2.2c-3.1 0-5.47.8-7 2.43 2.08-1.48 4.44-2.33 7-2.33H15a1 1 0 0 1 1 1v3.08L19.59 11 16 7.52Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M14 5.1c0-.89 1.08-1.33 1.7-.7l6 6a1 1 0 0 1 0 1.4l-6 6c-.62.63-1.7.19-1.7-.7V14h-1.2c-3.54 0-6.55 1.15-8.9 3.6-.7.73-1.92.04-1.64-.94C3.55 12.1 7.4 9.9 12.8 9.9H14V5.1Zm2 2.42v3.38a1 1 0 0 1-1 1h-2.2c-3.1 0-5.47.8-7 2.43 2.08-1.48 4.44-2.33 7-2.33H15a1 1 0 0 1 1 1v3.08L19.59 11 16 7.52Z%22/%3E%3C/svg%3E'); }
+.fa-user { -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M12 12a4.25 4.25 0 1 0 0-8.5 4.25 4.25 0 0 0 0 8.5Zm0 2c-4.3 0-7.75 2.28-7.75 5.1 0 .77.63 1.4 1.4 1.4h12.7c.77 0 1.4-.63 1.4-1.4 0-2.82-3.45-5.1-7.75-5.1Z%22/%3E%3C/svg%3E'); mask-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22%3E%3Cpath fill=%22black%22 d=%22M12 12a4.25 4.25 0 1 0 0-8.5 4.25 4.25 0 0 0 0 8.5Zm0 2c-4.3 0-7.75 2.28-7.75 5.1 0 .77.63 1.4 1.4 1.4h12.7c.77 0 1.4-.63 1.4-1.4 0-2.82-3.45-5.1-7.75-5.1Z%22/%3E%3C/svg%3E'); }
+.fa-spinner {
+    -webkit-mask-image: none;
+    mask-image: none;
+    background-color: transparent !important;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+.header-btn .fas, .header-btn .far { width: 20px; height: 20px; min-width: 20px; }
+.filter-btn .fas, .filter-btn .far { width: 18px; height: 18px; min-width: 18px; }
+.verified-badge .fas { width: 10px; height: 10px; min-width: 10px; }
+.post-time .fas { width: 12px; height: 12px; min-width: 12px; }
+.post-menu-btn .fas { width: 22px; height: 22px; min-width: 22px; }
+.action-btn .fas, .action-btn .far { width: 21px; height: 21px; min-width: 21px; }
+.comment-reactions .fas, .comment-reactions .far { width: 13px; height: 13px; min-width: 13px; color: #1877f2; vertical-align: -2px; }
+.comment-profile-pic .fa-user { width: 15px; height: 15px; min-width: 15px; }
+.comment-send-btn .fa-spinner { width: 15px; height: 15px; min-width: 15px; color: #fff; }
+.comment-profile-pic img, .profile-pic img { object-fit: cover; }
+.product-image-container img { max-width: 140px; height: auto; object-fit: contain; }
+.payment-methods img { max-width: 100%; height: auto; }
+
+
+
+/* Ajustes compactos da oferta e dos cards de compra */
+.reward-offer {
+    padding: 24px 16px 16px !important;
+    margin: 16px 16px 12px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.10) !important;
+    border: 1px solid rgba(255, 69, 0, 0.14);
+    overflow: visible;
+}
+.reward-offer-badge {
+    top: -13px !important;
+    padding: 6px 16px !important;
+    border-radius: 999px !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+}
+.reward-progress-wrap {
+    margin-bottom: 12px !important;
+}
+.reward-progress-wrap p {
+    margin: 0 0 7px !important;
+    font-size: 15px !important;
+    line-height: 1.1 !important;
+}
+.reward-progress-track {
+    height: 11px !important;
+    max-width: 100% !important;
+}
+.reward-title {
+    font-size: 23px !important;
+    line-height: 1.08 !important;
+    margin: 6px 0 6px !important;
+    letter-spacing: -0.2px;
+}
+.reward-subtitle {
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+    margin: 6px 0 12px !important;
+}
+.reward-list {
+    font-size: 14px !important;
+    line-height: 1.24 !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+}
+.reward-list li {
+    margin-bottom: 6px !important;
+}
+.reward-list li:last-child {
+    margin-bottom: 0 !important;
+}
+
+.dtc-offer-card {
+    padding: 20px 14px 14px;
+    margin: 12px 16px 14px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.09);
+}
+.dtc-offer-card .best-value-badge,
+.dtc-offer-card .single-product-badge {
+    top: -13px;
+    padding: 5px 15px;
+    border-radius: 999px;
+    font-size: 13px;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+.dtc-offer-card .supply-info {
+    margin-bottom: 9px;
+}
+.dtc-offer-card .supply-title {
+    font-size: 24px;
+    line-height: 1.05;
+    letter-spacing: -0.2px;
+}
+.dtc-offer-card .product-container {
+    display: grid;
+    grid-template-columns: minmax(118px, 0.92fr) minmax(0, 1.08fr);
+    grid-template-areas:
+        "image price"
+        "benefits benefits";
+    align-items: center;
+    gap: 8px 10px;
+    margin-bottom: 10px;
+}
+.dtc-offer-card .product-image-container {
+    grid-area: image;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+.dtc-offer-card .product-image-container img {
+    width: 100%;
+    max-width: 180px;
+    max-height: 140px;
+    object-fit: contain;
+    display: block;
+}
+.dtc-offer-card .price-benefits-container {
+    display: contents;
+}
+.dtc-offer-card .price-container {
+    grid-area: price;
+    text-align: left;
+    align-self: center;
+}
+.dtc-offer-card .price-main {
+    margin-bottom: 5px;
+}
+.dtc-offer-card .price-amount {
+    font-size: 34px;
+    line-height: 0.95;
+    letter-spacing: -0.5px;
+}
+.dtc-offer-card .price-unit {
+    font-size: 14px;
+    margin-top: 3px;
+}
+.dtc-offer-card .savings {
+    font-size: 17px;
+    line-height: 1.12;
+}
+.dtc-offer-card .benefits {
+    grid-area: benefits;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+}
+.dtc-offer-card .benefit-item {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 5px;
+    font-size: 11px;
+    line-height: 1.12;
+    border-left: 0;
+    border-top: 3px solid #28a745;
+    border-radius: 7px;
+    text-align: center;
+}
+.add-to-cart-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 1;
+    min-height: 54px;
+    padding: 15px 16px;
+    margin-bottom: 10px;
+}
+.dtc-offer-card .offer-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.dtc-offer-card .payment-methods {
+    margin-bottom: 0;
+    flex: 0 1 150px;
+    gap: 0;
+}
+.dtc-offer-card .payment-methods img {
+    width: 100% !important;
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+.dtc-offer-card .total-price {
+    font-size: 16px;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+    .dtc-offer-card {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .dtc-offer-card .product-container {
+        grid-template-columns: minmax(106px, 0.88fr) minmax(0, 1.12fr);
+        gap: 7px 8px;
+    }
+    .dtc-offer-card .benefit-item {
+        font-size: 10px;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    .dtc-offer-card .price-amount {
+        font-size: 32px;
+    }
+    .reward-title {
+        font-size: 21px !important;
+    }
+}
+
+
+/* Correção final de centralização mobile: trava a página no centro e elimina sobra lateral */
+html {
+    width: 100%;
+    min-width: 0;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    max-width: 414px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow-x: hidden !important;
+    background: #ffffff;
+}
+
+.main-header,
+.nav-tabs,
+.post-container,
+.post-header,
+.post-content,
+.engagement-bar,
+.post-actions,
+.comments-section,
+.add-comment,
+.special-offer,
+.reward-offer,
+.dtc-offer-card {
+    max-width: 100%;
+}
+
+.vsl-centered-shell {
+    width: 100%;
+    max-width: 414px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background: #000000;
+    line-height: 0;
+}
+
+.vsl-centered-shell vturb-smartplayer,
+vturb-smartplayer,
+iframe,
+video,
+canvas {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+.profile-pic,
+.comment-profile-pic {
+    overflow: hidden !important;
+}
+
+.profile-pic img,
+.comment-profile-pic img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    display: block !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+}
+
+.comment-input-container,
+.comment-input-wrapper,
+.comment-content,
+.post-profile,
+.post-info,
+.product-container,
+.price-benefits-container {
+    min-width: 0;
+}
+
+.reward-offer,
+.dtc-offer-card {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+}
+
+@media (max-width: 414px) {
+    body {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .main-header,
+    .nav-tabs,
+    .post-container,
+    .engagement-bar,
+    .post-actions,
+    .comments-section,
+    .vsl-centered-shell,
+    vturb-smartplayer {
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 415px) {
+    body {
+        width: 414px !important;
+    }
+}
+
+/* Destaques comerciais dos cards DTC */
+:root {
+    --offer-yellow: #f9d037;
+    --offer-yellow-text: #8a6500;
+}
+#six-bottle-offer .buy-more-badge {
+    display: inline-block;
+    margin: 2px auto 10px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: #ff4500;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .2px;
+    box-shadow: 0 3px 8px rgba(255, 69, 0, .24);
+}
+
+.old-price {
+    display: inline-block;
+    margin-right: 7px;
+    color: #8a8d91;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    font-weight: 700;
+}
+
+#six-bottle-offer .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+#single-product-offer {
+    border-color: #e0aa00 !important;
+}
+#single-product-offer .price-amount,
+#single-product-offer .savings,
+#single-product-offer .total-price {
+    color: var(--offer-yellow-text) !important;
+}
+#single-product-offer .add-to-cart-btn {
+    background: var(--offer-yellow) !important;
+    border: 0 !important;
+    color: #ffffff !important;
+    animation: none;
+}
+#single-product-offer .add-to-cart-btn:hover {
+    background: var(--offer-yellow) !important;
+}
+#single-product-offer .benefit-item {
+    border-top-color: var(--offer-yellow) !important;
+}
+.shipping-callout {
+    display: block;
+    margin-top: 4px;
+    color: #138a3d;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+}
+#single-product-offer .shipping-callout {
+    color: var(--offer-yellow-text);
+}
+.offer-guarantee {
+    background: #000;
+    color: #fff;
+    padding: 22px 16px 26px;
+    font-family: Arial, sans-serif;
+}
+.offer-guarantee .seal {
+    display: block;
+    width: 45%;
+    max-width: 175px;
+    height: auto;
+    margin: 0 auto 16px;
+}
+.offer-guarantee h3 {
+    margin: 0 0 12px;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+.offer-guarantee h3 .green { color: #29c26a; display: block; }
+.offer-guarantee p { margin: 0 0 8px; font-size: 13px; line-height: 1.35; }
+.offer-guarantee a { color: inherit; }
+.offer-guarantee .badges { display: block; width: 100%; height: auto; margin: 18px 0 0; }
+</style>
+<!-- VTURB: ANTI-DOWNLOAD -->
+
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/6acec620babbf5001545864c/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="dns-prefetch" href="https://cdn.converteai.net/">
+<link rel="dns-prefetch" href="https://scripts.converteai.net/">
+<link rel="dns-prefetch" href="https://images.converteai.net/">
+<link rel="dns-prefetch" href="https://m3u8.vturb.net/">
+<link rel="dns-prefetch" href="https://license.vturb.com/">
+
+</head>
+<body>
+<!-- Main Header -->
+<header class="main-header">
+<h1 class="logo">Advetorial</h1>
+<div class="header-actions">
+<button class="header-btn">
+<i class="fas fa-search"></i>
+</button>
+<button class="header-btn">
+<i class="fas fa-comment-dots"></i>
+</button>
+</div>
+</header>
+<!-- Navigation Tabs -->
+<nav class="nav-tabs">
+<div class="tab active">
+<span>Home</span>
+</div>
+<div class="tab">
+<span>Favorites</span>
+</div>
+<div class="tab">
+<span>Recent</span>
+</div>
+<button class="filter-btn">
+<i class="fas fa-sliders-h"></i>
+</button>
+</nav>
+<!-- Fixed Post with Video -->
+<div class="post-container">
+<div class="post-header">
+<div class="post-profile">
+<div class="profile-pic">
+<img alt="" height="50" src="img/perfil-post.jpg" style="border-radius: 50%;" width="50"/>
+</div>
+<div class="post-info">
+<div class="post-author">Jhon Smith
+
+                        <div class="verified-badge">
+<i class="fas fa-check"></i>
+</div>
+</div>
+<div class="post-time">
+<span>28 minutes ago</span>
+<i class="fas fa-globe"></i>
+</div>
+</div>
+</div>
+<button class="post-menu-btn">
+<i class="fas fa-ellipsis-h"></i>
+</button>
+</div>
+<div class="post-content">
+<p class="post-text">This is the recipe video that's going viral online. Watch it while you still can!</p>
+<p class="post-text"><strong>But be warned</strong>—watch it alone. It contains explicit sexual content.</p>
+</div>
+<!-- COLOQUE AQUI A VSL -->
+<vturb-smartplayer id="vid-6acec620babbf5001545864c" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 125% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/528ac277-8029-4ec6-a3db-8da993dd5d9a/players/6acec620babbf5001545864c/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+<!-- FINAL DA VSL -->
+<!-- Engagement Bar -->
+<div class="engagement-bar">
+<div class="reactions-container">
+<img alt="Like" class="reaction-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8Y2lyY2xlIGN4PSIyMiIgY3k9IjIyIiByPSIyMSIgZmlsbD0iIzE4NzdmMiIvPgogIDxwYXRoIGQ9Ik0xOCAzNmgtNWMtMS4yIDAtMi0uOC0yLTJWMjFjMC0xLjIuOC0yIDItMmg1djE3em0zLTE3bDQtOWMuNC0uOSAxLjYtMS4zIDIuNC0uNyAxLjMuOSAxLjggMi44IDEuMSA0LjJMMjYgMTloOGMyLjEgMCAzLjUgMiAzIDRsLTIuMSA5Yy0uNSAyLjMtMi4zIDQtNC43IDRIMjFWMTl6IiBmaWxsPSIjZmZmIi8+Cjwvc3ZnPg=="/>
+<img alt="Wow" class="reaction-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8Y2lyY2xlIGN4PSIyMiIgY3k9IjIyIiByPSIyMSIgZmlsbD0iI2Y3YjkyOCIvPgogIDxjaXJjbGUgY3g9IjE1IiBjeT0iMTciIHI9IjMuMiIgZmlsbD0iIzNiMmIwMCIvPgogIDxjaXJjbGUgY3g9IjI5IiBjeT0iMTciIHI9IjMuMiIgZmlsbD0iIzNiMmIwMCIvPgogIDxlbGxpcHNlIGN4PSIyMiIgY3k9IjMwIiByeD0iNiIgcnk9IjciIGZpbGw9IiMzYjJiMDAiLz4KICA8cGF0aCBkPSJNMTAgMTFjMy0zIDctNCAxMC0yTTI0IDljNC0yIDgtMSAxMCAyIiBzdHJva2U9IiMzYjJiMDAiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+"/>
+<img alt="Love" class="reaction-icon" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NCIgaGVpZ2h0PSI0NCIgdmlld0JveD0iMCAwIDQ0IDQ0Ij4KICA8Y2lyY2xlIGN4PSIyMiIgY3k9IjIyIiByPSIyMSIgZmlsbD0iI2YwMjg0OSIvPgogIDxwYXRoIGQ9Ik0yMiAzNHMtMTItNy40LTEyLTE1YzAtNCAyLjgtNyA2LjUtNyAyLjIgMCA0LjEgMS4xIDUuNSAzIDEuNC0xLjkgMy4zLTMgNS41LTMgMy43IDAgNi41IDMgNi41IDcgMCA3LjYtMTIgMTUtMTIgMTV6IiBmaWxsPSIjZmZmIi8+Cjwvc3ZnPg=="/>
+<!-- atualizar o valor da contagem de reações  se o usuario der like, dar like, dar love, dar wow-->
+<span class="reaction-count" id="reaction-count">710</span>
+</div>
+<div class="engagement-stats">
+<span class="stat-item">38 Comments</span>
+<span class="stat-item">92 Shares</span>
+</div>
+</div>
+<!-- Special Offer Section -->
+<div class="post-actions">
+<div class="action-btn" id="like-btn">
+<i class="far fa-thumbs-up"></i>
+<span>Like</span>
+</div>
+<div class="action-btn">
+<i class="far fa-comment"></i>
+<span>Comment</span>
+</div>
+<div class="action-btn">
+<i class="fas fa-share"></i>
+<span>Share</span>
+</div>
+</div>
+<!-- Special Offer Section -->
+<section class="reward-offer" id="special-offer" style="background-color: #ffffff; padding: 40px; text-align: center; font-family: Arial, sans-serif; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); max-width: 700px; margin: 20px auto; position: relative;">
+<!-- Badge -->
+<div class="reward-offer-badge" style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background-color: #ff4500; color: white; font-weight: bold; padding: 10px 20px; border-radius: 20px; font-size: 16px;">
+                Special offer
+            </div>
+<!-- Spots -->
+<div class="reward-progress-wrap" style="margin-bottom: 30px;">
+<p id="spots-text" style="font-size: 18px; color: #333;">
+<strong><span id="spots">1/10</span> claimed!</strong> <!-- Inicializa com 1/10 -->
+</p>
+<!-- Progress Bar -->
+<div class="reward-progress-track" style="background-color: #f1f1f1; border-radius: 10px; overflow: hidden; height: 20px; max-width: 500px; margin: 0 auto;">
+<div id="progress-bar" style="height: 100%; width: 10%; background-color: #28a745; transition: width 0.5s;"></div>
+<!-- Inicia com 10% -->
+</div>
+</div>
+<!-- Heading -->
+<h2 class="reward-title" style="font-size: 32px; color: #333; font-weight: bold; margin-top: 10px;">💥 Be One of the First 10 People! 💥</h2>
+<!-- Subheading -->
+<p class="reward-subtitle" style="font-size: 18px; color: #555; margin: 10px 0 30px;">
+                Complete the payment for the <b>6-bottle</b> kit and receive the reward:
+            </p>
+<!-- Bonus List -->
+<!-- Bonus List -->
+<ul class="reward-list" style="list-style-type:none;padding:0;font-size:18px;color:#444;margin-bottom:30px;text-align:left;max-width:650px;margin:0 auto;">
+
+    <li style="margin-bottom:12px;">
+        ✅ <strong>The Johnny Sins Manual:</strong> How to Use Your New Manhood.
+        <span style="float:right;font-weight:700;color:#16a34a;">($497)</span>
+    </li>
+
+    <li style="margin-bottom:12px;">
+        ✅ <strong>The Seven Positions</strong> Every Woman Asks For Guide.
+        <span style="float:right;font-weight:700;color:#16a34a;">($297)</span>
+    </li>
+
+    <li style="margin-bottom:12px;">
+        ✅ The <strong>Prolonged Orgasm</strong> Manual.
+        <span style="float:right;font-weight:700;color:#16a34a;">($397)</span>
+    </li>
+
+    <li style="margin-bottom:12px;">
+        ✅ <strong>The Lesbian Trick</strong> Female Pleasure Map.
+        <span style="float:right;font-weight:700;color:#16a34a;">($697)</span>
+    </li>
+
+    <li style="margin-bottom:12px;">
+        ✅ <strong>45-Minute One-on-One</strong> Zoom Consultation with Dr. Mark Hyman.
+        <span style="float:right;font-weight:700;color:#16a34a;">($1,500)</span>
+    </li>
+
+    <li style="margin-bottom:12px;">
+        ✅ <strong>Surprise Gift.</strong>
+        <span style="float:right;font-weight:700;color:#16a34a;">($389)</span>
+    </li>
+
+    <li style="margin-top:20px;padding-top:18px;border-top:2px solid #e5e5e5;font-size:24px;font-weight:900;color:#111;text-align:center;list-style:none;">
+        🎁 <span style="color:#16a34a;">Total Bonus Value:</span> <strong>$4,071</strong>
+    </li>
+
+</ul>
+</section>
+<section class="dtc-offer-card" id="six-bottle-offer">
+    <div class="post-header" style="padding: 0 0 12px 0;">
+        <div class="post-profile">
+            <div class="profile-pic">
+                <img alt="" height="50" src="img/perfil-post.jpg" style="border-radius: 50%;" width="50"/>
+            </div>
+            <div class="post-info">
+                <div class="post-author">Horse Gelatin Protocol</div>
+                <div class="post-time"><span>Sponsored</span> <i class="fas fa-globe"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="post-content" style="padding: 0 0 12px 0;">
+        <p class="post-text">Secure your 6-month supply today. This is the best value option available.</p>
+    </div>
+<!-- Best Value Badge -->
+<div class="best-value-badge">
+                Best Value
+            </div>
+<!-- Supply Info -->
+<div class="supply-info">
+<h2 class="supply-title">6-month supply</h2>
+<div class="buy-more-badge">BUY 3 GET 3 FREE</div>
+</div>
+<!-- Product Display -->
+<div class="product-container">
+<!-- Product Image -->
+<div class="product-image-container">
+
+<img alt="Produto" src="img/6 - frascos.png" style="width: 100%; max-width: 180px; height: auto;"/>
+
+</div>
+<!-- Price and Benefits -->
+<div class="price-benefits-container">
+<!-- Price Info -->
+<div class="price-container">
+<div class="price-main">
+<div class="price-row"><span class="old-price">$98</span><span class="price-amount">$49</span></div>
+<span class="price-unit">Per Bottle</span>
+</div>
+<div class="savings">
+                            YOU SAVE $294!
+                        </div>
+</div>
+<!-- Benefits -->
+<div class="benefits">
+<div class="benefit-item">ALL BONUSES!</div>
+<div class="benefit-item">FAST SHIPPING</div>
+<div class="benefit-item">MONEY-BACK GUARANTEE</div>
+</div>
+</div>
+</div>
+<!-- Add to Cart Button -->
+<a class="add-to-cart-btn" href="meulink" role="button">
+                BUY NOW
+            </a>
+<!-- Payment Methods -->
+<div class="offer-footer"><div class="payment-methods">
+<img alt="Payment Methods" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MjAiIGhlaWdodD0iOTIiIHZpZXdCb3g9IjAgMCA0MjAgOTIiPgogIDxyZWN0IHdpZHRoPSI0MjAiIGhlaWdodD0iOTIiIHJ4PSIxMiIgZmlsbD0iI2Y4ZjlmYSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE4IDIwKSI+CiAgICA8cmVjdCB3aWR0aD0iODIiIGhlaWdodD0iNTIiIHJ4PSI4IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNkOWRlZTUiLz4KICAgIDxyZWN0IHg9IjEwIiB5PSIxMyIgd2lkdGg9IjYyIiBoZWlnaHQ9IjgiIHJ4PSIyIiBmaWxsPSIjMTg3N2YyIi8+CiAgICA8cmVjdCB4PSIxMCIgeT0iMzQiIHdpZHRoPSIzOCIgaGVpZ2h0PSI2IiByeD0iMiIgZmlsbD0iI2E0YTliMCIvPgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTggMjApIj4KICAgIDxyZWN0IHdpZHRoPSI4MiIgaGVpZ2h0PSI1MiIgcng9IjgiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2Q5ZGVlNSIvPgogICAgPGNpcmNsZSBjeD0iMzUiIGN5PSIyNiIgcj0iMTQiIGZpbGw9IiNmZjVmMDAiIG9wYWNpdHk9IjAuODUiLz4KICAgIDxjaXJjbGUgY3g9IjQ5IiBjeT0iMjYiIHI9IjE0IiBmaWxsPSIjZWIwMDFiIiBvcGFjaXR5PSIwLjc1Ii8+CiAgPC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIxOCAyMCkiPgogICAgPHJlY3Qgd2lkdGg9IjgyIiBoZWlnaHQ9IjUyIiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZDlkZWU1Ii8+CiAgICA8dGV4dCB4PSI0MSIgeT0iMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMWExZjcxIj5WSVNBPC90ZXh0PgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMTggMjApIj4KICAgIDxyZWN0IHdpZHRoPSI4MiIgaGVpZ2h0PSI1MiIgcng9IjgiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2Q5ZGVlNSIvPgogICAgPHRleHQgeD0iNDEiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzI4YTc0NSI+U0VDVVJFPC90ZXh0PgogIDwvZz4KPC9zdmc+" width="50%"/>
+</div><div class="total-price">
+                Total: <span class="old-price">$588</span> $294 <span class="shipping-callout">+ FREE SHIPPING</span>
+            </div></div>
+<!-- Total -->
+
+</section>
+<!-- Single Product Offer Section -->
+<section class="dtc-offer-card" id="single-product-offer">
+    <div class="post-header" style="padding: 0 0 12px 0;">
+        <div class="post-profile">
+            <div class="profile-pic">
+                <img alt="" height="50" src="img/perfil-post.jpg" style="border-radius: 50%;" width="50"/>
+            </div>
+            <div class="post-info">
+                <div class="post-author">Horse Gelatin Protocol</div>
+                <div class="post-time"><span>Sponsored</span> <i class="fas fa-globe"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="post-content" style="padding: 0 0 12px 0;">
+        <p class="post-text">Try our 3-month supply. A great way to start your metabolic transformation.</p>
+    </div>
+<!-- Supply Info -->
+<div class="supply-info">
+<h2 class="supply-title">3-month supply</h2>
+</div>
+<!-- Product Display -->
+<div class="product-container">
+<!-- Product Image -->
+<div class="product-image-container">
+<img alt="Produto" src="img/3 - frascos.png" style="width: 100%; max-width: 180px; height: auto;"/>
+</div>
+<!-- Price and Benefits -->
+<div class="price-benefits-container">
+<!-- Price Info -->
+<div class="price-container">
+<div class="price-main">
+<div class="price-row"><span class="old-price">$179</span><span class="price-amount">$69</span></div>
+<span class="price-unit">Per Bottle</span>
+</div>
+<div class="savings">YOU SAVE $360!</div>
+</div>
+<!-- Benefits -->
+<div class="benefits">
+<div class="benefit-item">ALL BONUSES!</div>
+<div class="benefit-item">FAST SHIPPING</div>
+<div class="benefit-item">MONEY-BACK GUARANTEE</div>
+</div>
+</div>
+</div>
+<a class="add-to-cart-btn" href="meulink" role="button">
+                BUY NOW
+            </a>
+<div class="offer-footer"><div class="payment-methods">
+<img alt="Payment Methods" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MjAiIGhlaWdodD0iOTIiIHZpZXdCb3g9IjAgMCA0MjAgOTIiPgogIDxyZWN0IHdpZHRoPSI0MjAiIGhlaWdodD0iOTIiIHJ4PSIxMiIgZmlsbD0iI2Y4ZjlmYSIvPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE4IDIwKSI+CiAgICA8cmVjdCB3aWR0aD0iODIiIGhlaWdodD0iNTIiIHJ4PSI4IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNkOWRlZTUiLz4KICAgIDxyZWN0IHg9IjEwIiB5PSIxMyIgd2lkdGg9IjYyIiBoZWlnaHQ9IjgiIHJ4PSIyIiBmaWxsPSIjMTg3N2YyIi8+CiAgICA8cmVjdCB4PSIxMCIgeT0iMzQiIHdpZHRoPSIzOCIgaGVpZ2h0PSI2IiByeD0iMiIgZmlsbD0iI2E0YTliMCIvPgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTggMjApIj4KICAgIDxyZWN0IHdpZHRoPSI4MiIgaGVpZ2h0PSI1MiIgcng9IjgiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2Q5ZGVlNSIvPgogICAgPGNpcmNsZSBjeD0iMzUiIGN5PSIyNiIgcj0iMTQiIGZpbGw9IiNmZjVmMDAiIG9wYWNpdHk9IjAuODUiLz4KICAgIDxjaXJjbGUgY3g9IjQ5IiBjeT0iMjYiIHI9IjE0IiBmaWxsPSIjZWIwMDFiIiBvcGFjaXR5PSIwLjc1Ii8+CiAgPC9nPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIxOCAyMCkiPgogICAgPHJlY3Qgd2lkdGg9IjgyIiBoZWlnaHQ9IjUyIiByeD0iOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZDlkZWU1Ii8+CiAgICA8dGV4dCB4PSI0MSIgeT0iMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMWExZjcxIj5WSVNBPC90ZXh0PgogIDwvZz4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMTggMjApIj4KICAgIDxyZWN0IHdpZHRoPSI4MiIgaGVpZ2h0PSI1MiIgcng9IjgiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2Q5ZGVlNSIvPgogICAgPHRleHQgeD0iNDEiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzI4YTc0NSI+U0VDVVJFPC90ZXh0PgogIDwvZz4KPC9zdmc+" width="50%"/>
+</div><div class="total-price">
+                Total: <span class="old-price">$537</span> $177 <span class="shipping-callout">+ FREE SHIPPING</span>
+            </div></div>
+
+</section>
+<section class="offer-guarantee" aria-label="60-day money-back guarantee">
+  <img class="seal" src="img/selo-garantia-60.png" width="512" height="512" alt="60 days money back guarantee" />
+  <h3>100% Satisfaction Guaranteed or Your Money Back.<span class="green">Unconditional 60-Day Guarantee.</span></h3>
+  <p>100% Satisfaction Guaranteed or Your Money Back.</p>
+  <p>Unconditional 60-Day Guarantee.</p>
+  <p>If for any reason you're not completely satisfied with Horse Gelatin within 60 days, simply email us at <a href="meulink">support@tryhorsegelatin.com</a> and we will refund every single cent you paid — no questions asked, no hassle, no fine print.</p>
+  <p>Just send back the unused bottles and we'll process your refund immediately — even if they're damaged. No questions. That's how confident we are in what Horse Gelatin does for men.</p>
+  <p>And if you choose the 6-bottle supply, your protection gets even stronger:</p>
+  <p>You'll be fully covered by our 60-day guarantee for the entire duration of your protocol — which means you can request a full refund at any point if you're not seeing the results you came here for.</p>
+  <p>So go ahead and order your Horse Gelatin kit today with zero risk. We're putting our own money behind your results — because we know what happens when a man finally gives his body what it actually needs.</p>
+  <img class="badges" src="img/selos-qualidade.png" width="1254" height="399" alt="GMP, FDA approved, 100% natural ingredients, USA ingredients and GMO free seals" />
+</section>
+<!-- Comments Section -->
+<div class="comments-section">
+<div class="comments-header">
+<span class="comments-count">6 comments</span>
+</div>
+<!-- Existing Comments -->
+<div class="comments-list">
+<!-- Comment 1: Madison Scott -->
+<div class="comment">
+<div class="comment-profile-pic">
+<img alt="Madison Scott" height="40" src="img/comentario-1.jpg" width="40"/>
+</div>
+<div class="comment-content">
+<div class="comment-header">
+<span class="comment-author">Madison Scott</span>
+<span class="comment-time">58 min</span>
+</div>
+<p class="comment-text">Wait what's the actual recipe? Do I need to watch the whole thing?</p>
+<div class="comment-actions">
+<span class="comment-action">Like</span>
+<span class="comment-action">Reply</span>
+<span class="comment-reactions">
+<i class="far fa-thumbs-up"></i> 72</span>
+</div>
+</div>
+</div>
+<!-- Comment 2: Victoria Carter -->
+<div class="comment reply-comment">
+<div class="comment-profile-pic">
+<img alt="Victoria Carter" height="40" src="img/comentario-2.jpg" width="40"/>
+</div>
+<div class="comment-content">
+<div class="comment-header">
+<span class="comment-author">Victoria Carter</span>
+<span class="comment-time">41 min</span>
+</div>
+<p class="comment-text">yeah she breaks it down early on. Worth watching tbh</p>
+<div class="comment-actions">
+<span class="comment-action">Like</span>
+<span class="comment-action">Reply</span>
+<span class="comment-reactions"><i class="far fa-thumbs-up"></i> 64</span>
+</div>
+</div>
+</div>
+<!-- Comment 3: Lisa G. -->
+<div class="comment">
+<div class="comment-profile-pic">
+<img alt="Lisa G." height="40" src="img/comentario-3.jpg" width="40"/>
+</div>
+<div class="comment-content">
+<div class="comment-header">
+<span class="comment-author">Lisa G.</span>
+<span class="comment-time">28 min</span>
+</div>
+<p class="comment-text">Ngl I only watched cause of Op.. but the baking soda recipe actually makes sense when she breaks down the science. Def gonna try it 👀</p>
+<div class="comment-actions">
+<span class="comment-action">Like</span>
+<span class="comment-action">Reply</span>
+<span class="comment-reactions"><i class="far fa-thumbs-up"></i> 31</span>
+</div>
+</div>
+</div>
+<!-- Comment 4: Olivia Martinez -->
+<div class="comment">
+<div class="comment-profile-pic">
+<img alt="Olivia Martinez" height="40" src="img/comentario-4.jpg" width="40"/>
+</div>
+<div class="comment-content">
+<div class="comment-header">
+<span class="comment-author">Olivia Martinez</span>
+<span class="comment-time">19 min</span>
+</div>
+<p class="comment-text">3 weeks in and my coworker asked if I got work done 😂 nope just baking soda apparently</p>
+<div class="comment-actions">
+<span class="comment-action">Like</span>
+<span class="comment-action">Reply</span>
+<span class="comment-reactions"><i class="far fa-thumbs-up"></i> 71</span>
+</div>
+</div>
+</div>
+<!-- Comment 5: Daisy Collins -->
+<div class="comment">
+<div class="comment-profile-pic">
+<img alt="Daisy Collins" height="40" src="img/comentario-5.jpg" width="40"/>
+</div>
+<div class="comment-content">
+<div class="comment-header">
+<span class="comment-author">Daisy Collins</span>
+<span class="comment-time">5 min</span>
+</div>
+<p class="comment-text">Everyone's talking about this trick. It even made it to BBC News.</p>
+<div class="comment-actions">
+<span class="comment-action">Like</span>
+<span class="comment-action">Reply</span>
+<span class="comment-reactions"><i class="far fa-thumbs-up"> </i> 21</span>
+</div>
+</div>
+</div>
+<!-- Comment 6: Emily Lewis -->
+<div class="comment">
+<div class="comment-profile-pic">
+<img alt="Emily Lewis" height="40" src="img/comentario-6.jpg" width="40"/>
+</div>
+<div class="comment-content">
+<div class="comment-header">
+<span class="comment-author">Emily Lewis</span>
+<span class="comment-time">2 min</span>
+</div>
+<p class="comment-text">2 months in. down 29 lbs. i'm honestly confused how this isn't bigger news 🤷‍♀️</p>
+<div class="comment-actions">
+<span class="comment-action">Like</span>
+<span class="comment-action">Reply</span>
+<span class="comment-reactions"><i class="far fa-thumbs-up"></i> 8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Comment -->
+<div class="add-comment">
+<div class="comment-input-container">
+<div class="comment-profile-pic">
+<i class="fas fa-user"></i>
+</div>
+<div class="comment-input-wrapper">
+<input class="comment-input" placeholder="Write a comment..." type="text"/>
+<button class="comment-send-btn">
+<img alt="Send" height="12" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICA8cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMi41IDMuNWwxOSA4LjUtMTkgOC41IDMuNi03LjQgOC4yLTEuMS04LjItMS4xeiIvPgo8L3N2Zz4=" width="12"/>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar -->
+<!-- <div class="bottom-actions">
+        <div class="action-item">
+            <i class="fas fa-video"></i>
+            <span>Live</span>
+        </div>
+        <div class="action-divider"></div>
+        <div class="action-item">
+            <i class="fas fa-image"></i>
+            <span>Photo</span>
+        </div>
+        <div class="action-divider"></div>
+        <div class="action-item">
+            <i class="fas fa-comment-dots"></i>
+            <span>Discuss</span>
+        </div>
+    </div> -->
+<script id="js-consolidado">
+document.addEventListener('DOMContentLoaded', function() {
+    const commentInput = document.querySelector('.comment-input');
+    const sendButton = document.querySelector('.comment-send-btn');
+    const commentsList = document.querySelector('.comments-list');
+    const commentsCount = document.querySelector('.comments-count');
+    const inputWrapper = document.querySelector('.comment-input-wrapper');
+    
+    let commentCount = 6; // Inicial com 6 comentários existentes
+    
+    // Função para atualizar o contador de comentários
+    function updateCommentCount() {
+        commentsCount.textContent = `${commentCount} comment${commentCount !== 1 ? 's' : ''}`;
+    }
+    
+    // Função para criar um novo comentário
+    function createCommentElement(text) {
+        const commentDiv = document.createElement('div');
+        commentDiv.className = 'comment new-comment';
+        
+        commentDiv.innerHTML = `
+            <div class="comment-profile-pic">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="comment-content">
+                <div class="comment-header">
+                    <span class="comment-author">You</span>
+                    <span class="comment-time">just now</span>
+                </div>
+                <p class="comment-text"></p>
+                <div class="comment-actions">
+                    <span class="comment-action">Like</span>
+                    <span class="comment-action">Reply</span>
+                    <span class="comment-reactions"><i class="far fa-thumbs-up"></i> 0</span>
+                </div>
+            </div>
+        `;
+        
+        commentDiv.querySelector('.comment-text').textContent = text;
+        return commentDiv;
+    }
+    
+    // Função para mostrar loading
+    function showLoading() {
+        inputWrapper.classList.add('loading');
+        sendButton.classList.add('loading');
+        commentInput.classList.add('loading');
+        sendButton.innerHTML = '<i class="fas fa-spinner"></i>';
+        commentInput.disabled = true;
+    }
+    
+    // Função para esconder loading
+    function hideLoading() {
+        inputWrapper.classList.remove('loading');
+        sendButton.classList.remove('loading');
+        commentInput.classList.remove('loading');
+        sendButton.innerHTML = '<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICA8cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMi41IDMuNWwxOSA4LjUtMTkgOC41IDMuNi03LjQgOC4yLTEuMS04LjItMS4xeiIvPgo8L3N2Zz4=" alt="Send" width="12" height="12">';
+        commentInput.disabled = false;
+    }
+    
+    // Função para adicionar comentário
+    async function addComment(text) {
+        if (!text.trim()) return;
+        
+        showLoading();
+        
+        // Simular delay de envio (1.5 segundos)
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        const newComment = createCommentElement(text);
+        commentsList.appendChild(newComment);
+        
+        commentCount++;
+        updateCommentCount();
+        
+        commentInput.value = '';
+        
+        hideLoading();
+        
+        setTimeout(() => {
+            newComment.classList.remove('new-comment');
+        }, 300);
+        
+        // Scroll suave para o novo comentário
+        newComment.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    
+    // Event listener para o botão de enviar
+    sendButton.addEventListener('click', function() {
+        const text = commentInput.value.trim();
+        if (text) {
+            addComment(text);
+        }
+    });
+    
+    // Event listener para Enter no input
+    commentInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            const text = commentInput.value.trim();
+            if (text) {
+                addComment(text);
+            }
+        }
+    });
+    
+    // Event listener para input vazio (desabilitar botão)
+    commentInput.addEventListener('input', function() {
+        const text = commentInput.value.trim();
+        if (text) {
+            sendButton.style.opacity = '1';
+            sendButton.style.cursor = 'pointer';
+        } else {
+            sendButton.style.opacity = '0.6';
+            sendButton.style.cursor = 'not-allowed';
+        }
+    });
+    
+    // Inicializar estado do botão
+    sendButton.style.opacity = '0.6';
+    sendButton.style.cursor = 'not-allowed';
+    
+    // Adicionar funcionalidade aos botões de curtir dos comentários existentes
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('comment-action') && (e.target.textContent === 'Like' || e.target.textContent === 'Liked')) {
+            const isLiked = e.target.textContent === 'Liked';
+            
+            if (!isLiked) {
+                // Primeiro like
+                e.target.style.color = '#1877f2';
+                e.target.textContent = 'Liked';
+                
+                // Encontrar o contador de likes do comentário
+                const commentElement = e.target.closest('.comment');
+                const reactionsElement = commentElement.querySelector('.comment-reactions');
+                const likeCountText = reactionsElement.textContent.trim();
+                
+                // Extrair o número atual de likes
+                const currentLikes = parseInt(likeCountText.match(/\d+/)[0]);
+                
+                // Incrementar o contador
+                const newLikes = currentLikes + 1;
+                
+                // Atualizar o texto mantendo o ícone
+                reactionsElement.innerHTML = `<i class="far fa-thumbs-up"></i> ${newLikes}`;
+            } else {
+                // Descurtir
+                e.target.style.color = '';
+                e.target.textContent = 'Like';
+                
+                // Encontrar o contador de likes do comentário
+                const commentElement = e.target.closest('.comment');
+                const reactionsElement = commentElement.querySelector('.comment-reactions');
+                const likeCountText = reactionsElement.textContent.trim();
+                
+                // Extrair o número atual de likes
+                const currentLikes = parseInt(likeCountText.match(/\d+/)[0]);
+                
+                // Decrementar o contador (não pode ser menor que 0)
+                const newLikes = Math.max(0, currentLikes - 1);
+                
+                // Atualizar o texto mantendo o ícone
+                reactionsElement.innerHTML = `<i class="far fa-thumbs-up"></i> ${newLikes}`;
+            }
+        }
+    });
+    
+
+
+    // --- INÍCIO: Like do post principal ---
+    const likeBtn = document.getElementById('like-btn');
+    const reactionCount = document.getElementById('reaction-count');
+    let liked = false;
+    const initialCount = reactionCount ? parseInt(reactionCount.textContent, 10) : 0;
+
+    if (likeBtn && reactionCount) {
+        likeBtn.addEventListener('click', function () {
+            liked = !liked;
+            if (liked) {
+                reactionCount.textContent = initialCount + 1;
+                likeBtn.classList.add('liked');
+                // Troca o ícone para preenchido
+                likeBtn.querySelector('i').classList.remove('far');
+                likeBtn.querySelector('i').classList.add('fas');
+                likeBtn.querySelector('span').textContent = 'Liked';
+                likeBtn.style.color = '#1877f2';
+            } else {
+                reactionCount.textContent = initialCount;
+                likeBtn.classList.remove('liked');
+                // Troca o ícone para contorno
+                likeBtn.querySelector('i').classList.remove('fas');
+                likeBtn.querySelector('i').classList.add('far');
+                likeBtn.querySelector('span').textContent = 'Like';
+                likeBtn.style.color = '';
+            }
+        });
+    }
+    // --- FIM: Like do post principal ---
+}); 
+</script>
+
+<!-- Special Offer Script -->
+<script>
+(function () {
+    function onReady(callback) {
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", callback);
+        } else {
+            callback();
+        }
+    }
+
+    onReady(function () {
+        var spotsElement = document.getElementById("spots");
+        var progressBar = document.getElementById("progress-bar");
+        var specialOfferSection = document.getElementById("special-offer");
+
+        if (!spotsElement || !progressBar || !specialOfferSection) return;
+
+        var TOTAL_SPOTS = 10;
+        var STOP_AT = 6;
+        var INTERVAL_MS = 8000;
+        var NOTIFICATION_DURATION_MS = 5000;
+
+        var notifications = [
+            "<span class='bold'>Jack Thomas, from Birmingham</span>, purchased 6 bottles",
+            "<span class='bold'>Henry Harris, from Leeds</span>, purchased 6 bottles",
+            "<span class='bold'>Oliver Smith, from London</span>, purchased 6 bottles",
+            "<span class='bold'>Ethan Clark, from Sydney</span>, purchased 6 bottles",
+            "<span class='bold'>William Johnson, from New York</span>, purchased 6 bottles",
+            "<span class='bold'>Daniel Martinez, from Los Angeles</span>, purchased 6 bottles"
+        ];
+
+        var spotsClaimed = 1;
+        var started = false;
+        var completed = false;
+        var progressTimer = null;
+        var visibilityTimer = null;
+        var mutationObserver = null;
+        var intersectionObserver = null;
+        var lastNotificationIndex = -1;
+
+        function renderProgress() {
+            spotsElement.textContent = spotsClaimed + "/" + TOTAL_SPOTS;
+            progressBar.style.width = ((spotsClaimed / TOTAL_SPOTS) * 100) + "%";
+        }
+
+        function isOfferShown() {
+            var style = window.getComputedStyle ? window.getComputedStyle(specialOfferSection) : specialOfferSection.currentStyle;
+            var rect = specialOfferSection.getBoundingClientRect ? specialOfferSection.getBoundingClientRect() : null;
+            var width = rect ? rect.width : specialOfferSection.offsetWidth;
+            var height = rect ? rect.height : specialOfferSection.offsetHeight;
+            var opacity = style && typeof style.opacity !== "undefined" ? parseFloat(style.opacity) : 1;
+
+            return style &&
+                style.display !== "none" &&
+                style.visibility !== "hidden" &&
+                opacity !== 0 &&
+                width > 0 &&
+                height > 0;
+        }
+
+        function getNotificationText() {
+            if (notifications.length === 1) return notifications[0];
+
+            var index = Math.floor(Math.random() * notifications.length);
+            while (index === lastNotificationIndex) {
+                index = Math.floor(Math.random() * notifications.length);
+            }
+
+            lastNotificationIndex = index;
+            return notifications[index];
+        }
+
+        function applyStyles(element, styles) {
+            for (var property in styles) {
+                if (Object.prototype.hasOwnProperty.call(styles, property)) {
+                    element.style[property] = styles[property];
+                }
+            }
+        }
+
+        /* O container da notificacao e criado UMA unica vez e nunca mais e
+           inserido/removido do DOM. Isso evita mutacoes no <body> que faziam
+           o player da VSL reinicializar (video reiniciando do zero). */
+        var notificationEl = null;
+        var notificationHideTimer = null;
+
+        function getNotificationElement() {
+            if (notificationEl && notificationEl.parentNode) return notificationEl;
+
+            notificationEl = document.createElement("div");
+            notificationEl.className = "notification purchase-notification";
+
+            applyStyles(notificationEl, {
+                position: "fixed",
+                bottom: "-120px",
+                left: "16px",
+                right: "auto",
+                backgroundColor: "#79d25d",
+                color: "#ffffff",
+                padding: "12px 16px",
+                fontSize: "14px",
+                borderRadius: "8px",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                width: "auto",
+                maxWidth: "calc(100vw - 32px)",
+                textAlign: "center",
+                zIndex: "999999",
+                opacity: "0",
+                pointerEvents: "none",
+                transition: "bottom 0.5s ease-in-out, opacity 0.3s ease-in-out",
+                fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+            });
+
+            document.body.appendChild(notificationEl);
+            return notificationEl;
+        }
+
+        function showPurchaseNotification() {
+            var el = getNotificationElement();
+
+            if (notificationHideTimer) {
+                clearTimeout(notificationHideTimer);
+                notificationHideTimer = null;
+            }
+
+            el.innerHTML = getNotificationText();
+            el.style.opacity = "1";
+
+            setTimeout(function () {
+                el.style.bottom = "20px";
+            }, 50);
+
+            notificationHideTimer = setTimeout(function () {
+                el.style.bottom = "-120px";
+                el.style.opacity = "0";
+                notificationHideTimer = null;
+            }, NOTIFICATION_DURATION_MS);
+        }
+
+
+        function safeShowPurchaseNotification() {
+            try {
+                showPurchaseNotification();
+            } catch (error) {
+                if (window.console && console.warn) {
+                    console.warn("Purchase notification skipped:", error);
+                }
+            }
+        }
+
+        function stopProgressFlow() {
+            completed = true;
+            if (progressTimer) {
+                clearInterval(progressTimer);
+                progressTimer = null;
+            }
+        }
+
+        function clearStartWatchers() {
+            if (visibilityTimer) {
+                clearInterval(visibilityTimer);
+                visibilityTimer = null;
+            }
+
+            if (mutationObserver) {
+                mutationObserver.disconnect();
+                mutationObserver = null;
+            }
+
+            if (intersectionObserver) {
+                intersectionObserver.disconnect();
+                intersectionObserver = null;
+            }
+        }
+
+        function advanceProgress() {
+            if (completed) return;
+
+            if (spotsClaimed >= STOP_AT) {
+                stopProgressFlow();
+                return;
+            }
+
+            spotsClaimed += 1;
+            renderProgress();
+            safeShowPurchaseNotification();
+
+            if (spotsClaimed >= STOP_AT) {
+                stopProgressFlow();
+            }
+        }
+
+        function startProgressFlow(forceStart) {
+            if (started || completed) return;
+            if (!forceStart && !isOfferShown()) return;
+
+            started = true;
+            clearStartWatchers();
+            renderProgress();
+
+            /* O timer vem antes da notificação. Assim, se algum WebView mobile bloquear
+               a notificação, a barra continua contando normalmente. */
+            progressTimer = setInterval(advanceProgress, INTERVAL_MS);
+            safeShowPurchaseNotification();
+        }
+
+        function checkAndStart() {
+            startProgressFlow(false);
+        }
+
+        function installVisibleMarkerAnimation() {
+            var styleTag = document.createElement("style");
+            styleTag.textContent = "@-webkit-keyframes specialOfferCounterVisible{from{opacity:.9999}to{opacity:1}}@keyframes specialOfferCounterVisible{from{opacity:.9999}to{opacity:1}}#special-offer{-webkit-animation:specialOfferCounterVisible 0.001s;animation:specialOfferCounterVisible 0.001s}";
+            document.head.appendChild(styleTag);
+
+            function onAnimationStart(event) {
+                if (!event || event.animationName === "specialOfferCounterVisible") {
+                    startProgressFlow(true);
+                }
+            }
+
+            specialOfferSection.addEventListener("animationstart", onAnimationStart, false);
+            specialOfferSection.addEventListener("webkitAnimationStart", onAnimationStart, false);
+        }
+
+        window.startSpecialOfferCounter = function () {
+            startProgressFlow(true);
+        };
+
+        renderProgress();
+        installVisibleMarkerAnimation();
+
+        if (window.MutationObserver) {
+            mutationObserver = new MutationObserver(checkAndStart);
+            mutationObserver.observe(document.documentElement, {
+                attributes: true,
+                childList: true,
+                subtree: true,
+                attributeFilter: ["class", "style"]
+            });
+        }
+
+        if (window.IntersectionObserver) {
+            intersectionObserver = new IntersectionObserver(function (entries) {
+                for (var i = 0; i < entries.length; i++) {
+                    if (entries[i].isIntersecting) {
+                        startProgressFlow(true);
+                        break;
+                    }
+                }
+            }, { threshold: 0.05 });
+
+            intersectionObserver.observe(specialOfferSection);
+        }
+
+        visibilityTimer = setInterval(checkAndStart, 250);
+        window.addEventListener("load", checkAndStart, false);
+        window.addEventListener("pageshow", checkAndStart, false);
+        checkAndStart();
+    });
+})();
+</script>
+
+</body>
+</html>
